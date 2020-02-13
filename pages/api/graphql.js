@@ -1,7 +1,6 @@
 import { ApolloServer, gql } from 'apollo-server-micro';
 import { mergeResolvers, mergeTypeDefs } from 'graphql-toolkit';
-
-import connectDB from '../../lib/mongoose';
+import connectDb from '../../lib/mongoose';
 import { habitsResolvers } from '../../api/habits/resolvers';
 import { habitsMutations } from '../../api/habits/mutations';
 import Habits from '../../api/habits/Habits.graphql';
@@ -15,7 +14,7 @@ const fakeTypeDefs = gql`
 const fakeResolvers = {
   Query: {
     sayHello: () => {
-      return 'Hello Level Up';
+      return 'Hello Level Up!';
     }
   }
 };
@@ -26,10 +25,7 @@ const resolvers = mergeResolvers([
   habitsMutations
 ]);
 
-const typeDefs = mergeTypeDefs([
-  fakeTypeDefs,
-  Habits
-]);
+const typeDefs = mergeTypeDefs([fakeTypeDefs, Habits]);
 
 const apolloServer = new ApolloServer({ typeDefs, resolvers });
 
@@ -40,5 +36,4 @@ export const config = {
 };
 
 const server = apolloServer.createHandler({ path: '/api/graphql' });
-
-export default connectDB(server);
+export default connectDb(server);

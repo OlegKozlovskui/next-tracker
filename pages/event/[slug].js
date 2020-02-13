@@ -8,7 +8,7 @@ const Event = () => {
 
   return (
     <Layout>
-      <h1>Slug === {slug}</h1>
+      <h1>{slug}</h1>
     </Layout>
   );
 };

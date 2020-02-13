@@ -11,7 +11,7 @@ const Nav = () => (
       </li>
       <li>
         <Link href="/about">
-          <a>Aboutss</a>
+          <a>About</a>
         </Link>
       </li>
     </ul>
@@ -43,6 +43,6 @@ const Nav = () => (
       }
     `}</style>
   </nav>
-)
+);
 
-export default Nav
+export default Nav;

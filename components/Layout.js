@@ -1,6 +1,5 @@
 import Head from 'next/head';
-
-import Nav from './Nav';
+import Nav from './nav';
 
 const Layout = ({ children }) => {
   return (
@@ -10,7 +9,7 @@ const Layout = ({ children }) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Nav />
-      {children}
+      <main>{children}</main>
     </div>
   );
 };

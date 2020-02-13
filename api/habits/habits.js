@@ -1,9 +1,10 @@
+// Database collection
 import mongoose, { Schema } from 'mongoose';
 
 export const HabitsSchema = new Schema({
   name: {
     type: String,
-    required: true,
+    required: true
   }
 });
 
