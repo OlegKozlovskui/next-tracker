@@ -4,7 +4,7 @@ const Habit = ({ habit }) => {
   const dates = getLast5Days();
   return (
     <article>
-      <h3>{habit}</h3>
+      <h3>{habit.name}</h3>
       <div>
         {dates.map(date => <HabitButton key={date.getTime()} date={date} />)}
       </div>
